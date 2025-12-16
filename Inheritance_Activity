@@ -1,0 +1,102 @@
+class Person:
+    def introduce(self):
+        return "I am a person"
+
+class Student(Person):
+    def study(self):
+        return "I am studying"
+
+
+class Flyable:
+    def fly(self):
+        return "Flying"
+
+class Swimmable:
+    def swim(self):
+        return "Swimming"
+
+class Duck(Flyable, Swimmable):
+    def quack(self):
+        return "Quack"
+
+
+class Shape:
+    def area(self):
+        return "Calculating area"
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return f"Area: {self.width * self.height}"
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+
+class Animal:
+    def eat(self):
+        return "Eating"
+
+class Dog(Animal):
+    def bark(self):
+        return "Barking"
+
+class Cat(Animal):
+    def meow(self):
+        return "Meowing"
+
+class A:
+    def method_a(self):
+        return "Method A"
+
+class B(A):
+    def method_b(self):
+        return "Method B"
+
+class C:
+    def method_c(self):
+        return "Method C"
+
+class D(B, C):
+    def method_d(self):
+        return "Method D"
+
+
+if __name__ == "__main__":
+    
+    print("Single Inheritance:")
+    student = Student()
+    print(student.introduce())
+    print(student.study())
+    print()
+
+    print("Multiple Inheritance:")
+    duck = Duck()
+    print(duck.fly())
+    print(duck.swim())
+    print(duck.quack())
+    print()
+
+    print("Multilevel Inheritance:")
+    square = Square(5)
+    print(square.area())
+    print()
+
+    print("Hierarchical Inheritance:")
+    dog = Dog()
+    cat = Cat()
+    print(dog.eat())
+    print(dog.bark())
+    print(cat.eat())
+    print(cat.meow())
+    print()
+
+    print("Hybrid Inheritance:")
+    d = D()
+    print(d.method_a())
+    print(d.method_b())
+    print(d.method_c())
+    print(d.method_d())
